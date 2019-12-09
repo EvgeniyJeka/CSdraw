@@ -10,9 +10,14 @@ and open the "CSdraw.html" file.
 
 How to use the app?
 
-Select a color and click on "Apply" (the default color is Black)
-Click anywhere inside the grey screen and draw a line with Num Lock keys.
+1. Select a color and click on "Apply" (the default color is Black)
+   Click anywhere inside the grey screen and draw a line with Num Lock keys.
 
-To change the line width increase the number in "Line Width" input box and click on "Apply".
+2. To change the line width increase/decreasse the number in "Line Width" input box and click on "Apply".
+
+3. To change the length of the line that is drawn on each click adjust the "Step Size" parameter.
+
+4. To erase double click
+
 
 

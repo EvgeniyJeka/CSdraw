@@ -17,7 +17,12 @@ How to use the app?
 
 3. To change the length of the line that is drawn on each click adjust the "Step Size" parameter.
 
-4. To erase double click
+4. To erase use double click. The size of the erased area can be modified.
+
+5. To create a custom color fill the RBG form and click "Apply".
+
+
+**HTML5 Canvas feature was used to create this app**
 
 
 

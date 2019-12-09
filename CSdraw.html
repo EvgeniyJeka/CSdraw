@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+    
+/*Canvas element. */
+
+    #screen{
+        background-color: gainsboro;
+        border: 1px solid black;
+        width:1300px;
+        height: 500px;
+        margin:auto;
+        position:absolute;
+        top:20px;
+        left:20px;
+        
+
+    }
+
+    #lengthScale{
+        position: absolute;
+        top:530px;
+        left:560px;
+        border:1px solid gold;
+        background-color: lightblue;
+        width:250px;
+        
+    }
+
+/*Eraser - "Apply" button*/
+
+    #apply{
+
+        width:50px;
+        height:20px;
+        background-color: orange;
+        color: wheat;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+/*Custom color - apply button*/
+
+    #applyColor{
+
+        width:44px;
+        height:20px;
+        background-color: orange;
+        color: wheat;
+        cursor: pointer;
+        border-radius: 20px;
+        margin-left:66px;
+        font-size: 12px;
+    }
+
+    #widthScale{
+        position: absolute;
+        top:580px;
+        left:560px;
+        border:1px solid orange;
+        background-color: lightblue;
+        width:250px;
+        height: 50px;
+        
+    }
+
+    #deleteScale{
+
+        position: absolute;
+        top:530px;
+        left:830px;
+        border:1px solid orange;
+        background-color: lightblue;
+        width:120px;
+        height: 100px;
+
+    }
+
+    #wscale{
+        margin-left: 15px;
+        margin-top:8px;
+        font-size: 22px;
+        color: blue;
+        width:56px;
+
+    }
+
+
+
+    #lscale{
+        margin-left: 112px;
+        
+        
+
+    }
+
+/*Scale related to "eraser" feature. */
+
+    #dscale{
+        position:absolute;
+        top:26px;
+        width:85px;
+        left:55px;
+        
+    }
+
+/*Colors div. Contains all available colors.*/
+
+    #colors{
+        width:500px;
+        height: 59px;
+        border: 1px solid silver;
+        position:absolute;
+        left:20px;
+        top:530px;
+    }
+
+/*Custom color div. Contains 3 input boxes and one button.*/
+    #customColor {
+        width:500px;
+        height: 34px;
+        border: 1px solid silver;
+        position:absolute;
+        left:20px;
+        top:597px;
+    }
+
+/*Color selection buttons*/
+    .button{
+    height:20px;
+    width:40px;
+    border:1px black solid;
+    margin-top:5px;
+    margin-left:15px;
+    cursor: pointer;
+    border-radius: 10px;
+    
+    
+ }
+
+ /*General label, attached to input boxes*/
+
+ label{
+     color:teal;
+     font-size: 17px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: bold;
+     margin-left: 4px;
+ }
+
+
+ /*Input textboxes. Used to receive numeric user input (line width,length,erased area size, customize color)*/
+
+ .InputLabel{
+     color:teal;
+     font-size: 17px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: bold;
+     position: absolute;
+     bottom: 10px;
+     margin-left: 4px;
+
+ }
+
+/*Eraser div*/
+
+ #eraser{
+     width:72px;
+     height:64px;
+     margin:3px;
+     
+ }
+
+
+/* Custom Color parameters entered by user into 3 inputs:  */
+
+ #redBox{
+      margin-left:145px;
+      margin-top:5px;
+      height: 15px;
+      width:40px; 
+ }
+
+ #blueBox{
+      margin-left:49px;
+      margin-top:5px;
+      height: 15px;
+      width:40px;
+ }
+
+ #greenBox{
+      margin-left:49px;
+      margin-top:5px;
+      height: 15px;
+      width:40px;
+ }
+
+
+    
+    </style>
+
+<script src="move.js"></script>
+
+</head>
+
+<body>
+
+    
+    <canvas id="screen">
+    
+    </canvas>
+
+    <div id="colors">
+       
+
+    </div>
+
+    <div id="customColor">
+            <span class="InputLabel">Custom color: </span>
+            <input type="number" id="redBox" min="0" max="255">
+            <span class="InputLabel">Red</span>
+            <input type="number" id="blueBox" min="0" max="255">
+            <span class="InputLabel">Blue</span>
+            <input type="number" id="greenBox" min="0" max="255">
+            <span class="InputLabel">Green</span>
+            <button id="applyColor">Apply</button>
+            
+
+
+    </div>
+
+    <div id="lengthScale">
+        <span class="InputLabel">Step size: </span>
+        <input type="range" id="lscale" min="1" max="20" list="tickmarks">
+    </div>
+
+    <div id="widthScale">
+        <label>Line width: <input type="number" id="wscale" min="0" max="10" step="0.5" value="1" ></label>
+        <button id="apply">Apply</button>
+     </div>
+
+     <div id="deleteScale">
+        <span class="InputLabel">Erase: </span>
+        <input type="range" id="dscale" min="1" max="10" list ="tickmarks" style="transform: rotate(-90deg);">
+        <img id="eraser" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScURJvcqNRJS11hqD0CvlrQ0TxjjNd3nWXabd0yxdrgAqjfoox">
+    </div>
+
+    <datalist id="tickmarks">
+       
+        <option value="1" label="10%">
+        <option value="2" label="20%">
+        <option value="3">
+        <option value="4">
+        <option value="5" label="50%">
+        <option value="6">
+        <option value="7">
+        <option value="8">
+        <option value="9" label="90%">
+        <option value="10" label="100%">
+</datalist>
+
+
+
+</body>
+
+
+
+</html>

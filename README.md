@@ -5,7 +5,7 @@ and open the "CSdraw.html" file.
 
 
 
-<img src="https://github.com/EvgeniyJeka/CSdraw/blob/master/CDRAW_1.jpg" alt="Screenshot" width="600" />
+<img src="https://github.com/EvgeniyJeka/CSdraw/blob/master/CDRAW_2.jpg" alt="Screenshot" width="600" />
 
 
 How to use the app?
